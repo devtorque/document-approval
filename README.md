@@ -186,4 +186,4 @@ I used AI-assisted development for scaffolding, API design review, test-case ide
 
 ## Loom
 
-Loom walkthrough: add the link after recording.
+Loom walkthrough: https://www.loom.com/share/93837f41eee24169a911faeb75e02bd1
