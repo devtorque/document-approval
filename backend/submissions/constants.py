@@ -22,20 +22,20 @@ DEMO_USERS = {
     "alice": {
         "id": "alice",
         "name": "Alice Submitter",
-        "email": "alice@springboard.com",
+        "email": "alice@example.com",
         "role": ROLE_SUBMITTER,
     },
     "bob": {
         "id": "bob",
         "name": "Bob Reviewer",
-        "email": "bob@springboard.com",
+        "email": "bob@example.com",
         "role": ROLE_REVIEWER,
     },
     # Internal-only identity used by visibility tests. Not exposed in the UI.
     "carol": {
         "id": "carol",
         "name": "Carol Submitter",
-        "email": "carol@springboard.com",
+        "email": "carol@example.com",
         "role": ROLE_SUBMITTER,
     },
 }

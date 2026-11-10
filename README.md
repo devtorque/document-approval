@@ -2,6 +2,8 @@
 
 A small document review workflow. Submitters create text submissions. Reviewers approve or reject pending submissions. Approved and rejected submissions are terminal.
 
+> **Demo only.** There is no real authentication (see [Demo identity limitation](#demo-identity-limitation)). Do not deploy this as is.
+
 ## Features
 
 - Create a submission with a title and text body.
@@ -15,8 +17,6 @@ A small document review workflow. Submitters create text submissions. Reviewers 
 - Backend: Django 5.2, Django REST Framework, SQLite
 - Frontend: React 19, TypeScript, Vite, Tailwind CSS v4, Axios
 - Tests: Django `APITestCase`, plus a production frontend build for type checking
-
-The Vite React template resolved to React 19. The UI uses the same component split the plan described for React 18.
 
 ## Backend setup
 
@@ -163,7 +163,7 @@ rejected -> terminal
 - SQLite does not support PostgreSQL-style row locks, so the code does not call `select_for_update()`. A production PostgreSQL version would review inside a transaction that locks the row.
 - CORS allows `http://localhost:5173` and `http://127.0.0.1:5173`, plus the `x-demo-user` header, so the browser preflight succeeds.
 
-## Two-hour trade-offs
+## Trade-offs
 
 - Demo identity instead of JWT or OAuth.
 - SQLite instead of PostgreSQL.
@@ -180,10 +180,15 @@ rejected -> terminal
 - Celery notifications.
 - CI/CD and Sentry.
 
-## AI tools used
+## Configuration
 
-I used AI-assisted development for scaffolding, API design review, test-case identification, debugging, and documentation review. I reviewed and adapted the generated suggestions and verified the resulting behavior with automated tests and manual browser checks.
+The backend reads two optional environment variables. Defaults are for local development only.
 
-## Loom
+- `DJANGO_SECRET_KEY`: set this to a random value outside local development.
+- `DJANGO_DEBUG`: `1` (default) or `0`.
 
-Loom walkthrough: https://www.loom.com/share/93837f41eee24169a911faeb75e02bd1
+The frontend reads an optional `VITE_API_URL` at build time (default `http://localhost:8000/api`).
+
+## License
+
+[MIT](LICENSE)

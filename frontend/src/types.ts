@@ -15,13 +15,13 @@ export const USERS: Record<DemoUserId, User> = {
   alice: {
     id: "alice",
     name: "Alice Submitter",
-    email: "alice@springboard.com",
+    email: "alice@example.com",
     role: "submitter",
   },
   bob: {
     id: "bob",
     name: "Bob Reviewer",
-    email: "bob@springboard.com",
+    email: "bob@example.com",
     role: "reviewer",
   },
 };
